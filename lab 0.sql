@@ -17,7 +17,7 @@ El enunciado te pude 4:
 */
 
 CREATE TABLE cars (
-    VIN INT AUTO_INCREMENT PRIMARY KEY, 
+    VIN INT UNSIGNED UNIQUE AUTO_INCREMENT PRIMARY KEY, 
     manufacturer VARCHAR(300), 
     model VARCHAR(300),
     year_car VARCHAR(4),
@@ -55,16 +55,16 @@ CREATE TABLE invoices (
 
 -- 3) Mete datos dentro de las tablas:
 
-INSERT INTO customers VALUES (1020, 'Sarah', '157', 'asstyujh@ioki.com', 'C/ertyu', 'Madrid', 'zxcvbn', 'Spain', '45863');
-INSERT INTO customers VALUES (1095, 'Sue', '62', 'asghj@hjiop.com', 'C/ Reus', 'Barcelona', 'sdfghjk', 'Spain', '12699');
-INSERT INTO customers VALUES (4201, 'Steve', '365', 'cytuvygiuhiojpk@hnp.com', 'C/true', 'Madrid', 'wertyui', 'Spain', '12699');
+INSERT INTO customers (c_id, c_name, c_num, c_email, c_address, c_city, c_st_prov, c_country, c_post_code) VALUES (1020, 'Sarah', '157', 'asstyujh@ioki.com', 'C/ertyu', 'Madrid', 'zxcvbn', 'Spain', '45863');
+INSERT INTO customers (c_id, c_name, c_num, c_email, c_address, c_city, c_st_prov, c_country, c_post_code) VALUES (1095, 'Sue', '62', 'asghj@hjiop.com', 'C/ Reus', 'Barcelona', 'sdfghjk', 'Spain', '12699');
+INSERT INTO customers (c_id, c_name, c_num, c_email, c_address, c_city, c_st_prov, c_country, c_post_code) VALUES (4201, 'Steve', '365', 'cytuvygiuhiojpk@hnp.com', 'C/true', 'Madrid', 'wertyui', 'Spain', '12699');
 
-INSERT INTO salepersons  VALUES  (001, 'Sally', 'Mad_Nord' );
-INSERT INTO salepersons VALUES (002, 'Susan', 'Barc_Sants');
-INSERT INTO salepersons VALUES (003, 'Jill', 'Barc_Sants');
+INSERT INTO salepersons (staff_id, s_name, store_id) VALUES  (001, 'Sally', 'Mad_Nord' );
+INSERT INTO salepersons (staff_id, s_name, store_id) VALUES (002, 'Susan', 'Barc_Sants');
+INSERT INTO salepersons (staff_id, s_name, store_id) VALUES (003, 'Jill', 'Barc_Sants');
 
-INSERT INTO invoices  VALUES  (010, 'Sally', 'Mad_Nord' );
-INSERT INTO invoices VALUES (020, 'Susan', 'Barc_Sants');
+INSERT INTO invoices (ref_in, date_in, VIN, c_id, s_id) VALUES  (010, 'Sally', 'Mad_Nord' );
+INSERT INTO invoices (ref_in, date_in, VIN, c_id, s_id) VALUES (020, 'Susan', 'Barc_Sants');
 
 
 -- 4) Opcional. Actualiza información.
